@@ -104,8 +104,7 @@ resource "aws_eks_cluster" "devopsola" {
 }
 
 # EKS Node Group
-resource "aws_eks_node_group" "devopsola_node_group" {
-  cluster_name    = aws_eks_cluster.devopsola.name
+resource "aws_eks_node_group" "devopsola" {
   node_group_name = "devopsola-node-group"
   node_role_arn   = aws_iam_role.devopsola_node_group_role.arn
   subnet_ids      = [aws_subnet.public_subnet_az1.id]
