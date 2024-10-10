@@ -1,5 +1,5 @@
 output "cluster_id" {
-  value = aws_eks_cluster.devopsshack.id
+  value = aws_eks_cluster.devopsola.id
 }
 
 output "node_group_id" {
@@ -7,9 +7,10 @@ output "node_group_id" {
 }
 
 output "vpc_id" {
-  value = aws_vpc.devopsshack_vpc.id
+  value = aws_vpc.vpc.id
 }
 
 output "subnet_ids" {
-  value = aws_subnet.devopsshack_subnet[*].id
+  value = aws_subnet.public_subnet_az1[*].id
 }
+
