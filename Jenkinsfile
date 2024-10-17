@@ -48,21 +48,21 @@ pipeline {
             steps {
                 script{
                 withDockerRegistry(credentialsId: 'dockerhub-cred', url: 'https://index.docker.io/v1/') {
-                sh "docker build -t sholly333/full-blogging-app ."
+                sh "docker build -t sholly333/blogging-app ."
                 }
                 }
             }
         }
         stage('Trivy Image Scan') {
             steps {
-                sh "trivy image --format table -o image.html sholly333/full-blogging-app:latest"
+                sh "trivy image --format table -o image.html sholly333/blogging-app:latest"
             }
         }
         stage('Docker Push Image') {
             steps {
                 script{
                 withDockerRegistry(credentialsId: 'dockerhub-cred', url: 'https://index.docker.io/v1/') {
-                    sh "docker push sholly333/full-blogging-app"
+                    sh "docker push sholly333/blogging-app"
                 }
                 }
             }
