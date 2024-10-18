@@ -60,7 +60,7 @@ resource "aws_security_group" "devopsola_cluster_sg" {
   }
 
   tags = {
-    Name = "devopssola-cluster-sg"
+    Name = "devopsola-cluster-sg"
   }
 }
 
@@ -116,7 +116,7 @@ resource "aws_eks_node_group" "devopsola" {
   }
 }
 
-resource "aws_iam_role" "devopssola_cluster_role" {
+resource "aws_iam_role" "devopsola_cluster_role" {
   name = "devopsola-cluster-role"
 
   assume_role_policy = <<EOF
