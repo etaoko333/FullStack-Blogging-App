@@ -87,7 +87,7 @@ pipeline {
 
         stage('K8s-Deploy') {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: 'devopsola-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://39746E96B1CBC7102AECA7975C90637F.gr7.us-east-2.eks.amazonaws.com') {
+                withKubeConfig(caCertificate: '', clusterName: 'devopsola-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://C237C0103DF0D7B349ED061646E2EF7E.gr7.us-west-1.eks.amazonaws.com') {
                     sh "kubectl apply -f deployment-service.yml"
                     sleep 20
                 }
@@ -96,7 +96,7 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: 'devopsola-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://39746E96B1CBC7102AECA7975C90637F.gr7.us-east-2.eks.amazonaws.com') {
+                withKubeConfig(caCertificate: '', clusterName: 'devopsola-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://C237C0103DF0D7B349ED061646E2EF7E.gr7.us-west-1.eks.amazonaws.com') {
                     sh "kubectl get pods"
                     sh "kubectl get service"
                 }
